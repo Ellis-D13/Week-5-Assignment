@@ -31,6 +31,7 @@ class Menu {
     // method to view all MenuItem objects in the items array
     // if the array is empty, it alerts the user that the menu is empty
     // otherwise it constructs a string of all menu items and alerts the user with the string
+    // item numbers start from 1 to be user-friendly
     view() {
         if (this.items.length === 0) {
             alert("The menu is empty.");
@@ -47,13 +48,14 @@ class Menu {
 
     // method to delete a MenuItem object from the items array
     // prompts the user to enter an index, then checks if the index is valid
+    // user is asked to enter a 1-based index, but we subtract 1 to convert it to a 0-based index
     // if the index is invalid, it alerts the user with an error message
     // otherwise, it removes the item at the given index from the array
     delete() {
-        let index = prompt("Enter the index of the item to delete:");
-        index = parseInt(index);
+        let index = prompt("Enter the number of the item to delete (starting from 1):");
+        index = parseInt(index) - 1;
         if (isNaN(index) || index < 0 || index >= this.items.length) {
-            alert("Invalid index.");
+            alert("Invalid item number. Please try again.");
             return;
         }
         
