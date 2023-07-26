@@ -1,6 +1,6 @@
 // define the MenuItem class
 class MenuItem {
-    // Constructor initializes the name and desdcription when a new object is created
+    // Constructor initializes the name and description when a new object is created
     constructor(name, description) {
     this.name = name;
     this.description = description;
@@ -19,8 +19,8 @@ class Menu {
     }
  
     // method to create a new MenuItem object
-    // prompts the user to ender the name and description
-    // pushes the new MenuIten to the items array
+    // prompts the user to enter the name and description
+    // pushes the new MenuItem to the items array
     create() {
         let name = prompt("Enter the item's name:");
         let description = prompt("Enter the item's description:");
