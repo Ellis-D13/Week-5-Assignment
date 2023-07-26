@@ -1,20 +1,26 @@
-// define a class as 'MenuItem' which has a name and description property
+// define the MenuItem class
 class MenuItem {
+    // Constructor initializes the name and desdcription when a new object is created
     constructor(name, description) {
     this.name = name;
     this.description = description;
     }
     
+    // Method to return a string representation of the MenuItem object
     view() {
-    //console.log(`${this.name} plays ${this.position}`)
     return `${this.name}: ${this.description}`;
     }
-    }
-    class Menu {
+}
+// define the Menu class
+class Menu {
+    // constructor initialized the items array when a new object is created
     constructor() {
     this.items = [];
     }
-  // Menu class has 'items' proper which is an array that stores the menu items   
+ 
+    // method to create a new MenuItem object
+    // prompts the user to ender the name and description
+    // pushes the new MenuIten to the items array
     create() {
         let name = prompt("Enter the item's name:");
         let description = prompt("Enter the item's description:");
@@ -22,6 +28,9 @@ class MenuItem {
         this.items.push(item);
     }
 
+    // method to view all MenuItem objects in the items array
+    // if the array is empty, it alerts the user that the menu is empty
+    // otherwise it constructs a string of all menu items and alerts the user with the string
     view() {
         if (this.items.length === 0) {
             alert("The menu is empty.");
@@ -36,6 +45,10 @@ class MenuItem {
         alert(output);
     }
 
+    // method to delete a MenuItem object from the items array
+    // prompts the user to enter an index, then checks if the index is valid
+    // if the index is invalid, it alerts the user with an error message
+    // otherwise, it removes the item at the given index from the array
     delete() {
         let index = prompt("Enter the index of the item to delete:");
         index = parseInt(index);
@@ -49,9 +62,11 @@ class MenuItem {
 
 }
    
-// usage 
+// create a new Menu object
 let menu = new Menu();
 
+// run a loop to prompt the user for an action and perform the action
+// the loop continues indefinitely until the user closes the browser tab
 while (true) {
     let action = prompt("Enter 'create' to add a new menu item, 'view' to see the menu, or 'delete' to remove an item:");
     switch (action.toLowerCase()) {
